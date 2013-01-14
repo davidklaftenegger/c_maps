@@ -1,6 +1,11 @@
 #ifndef __KVSET_H__
 #define __KVSET_H__
 
+#ifdef __cplusplus
+/* allow this header to be used verbatim in C++ code */
+extern "C" {
+#endif
+
 struct kv_set;
 
 typedef struct kv_set_functions
@@ -26,5 +31,10 @@ typedef struct kv_set
     unsigned int key_offset;
     void * type_specific_data;
 } KVSet;
+
+#ifdef __cplusplus
+/* see top, C++ compatibility */
+}
+#endif
 
 #endif
