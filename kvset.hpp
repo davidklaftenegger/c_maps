@@ -160,7 +160,7 @@ void delete_table(kv_set* set, void (*f)(void* context, void* element), void* co
 	typedef kv_set_instance<Impl, K, S> FS;
 	//TODO delete elements in table here
 	reinterpret_cast<kv_set_t<FS>*>(set)->type_specific_data.~FS();
-	FS::stdfuns::free(s);
+	FS::stdfuns::free(set);
 }
 
 
